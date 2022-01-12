@@ -1,0 +1,42 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/didi/opensource/orangeLab/vodka/clion
+CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at CMakeLists.txt:3 (cmake_policy):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+ninja: Entering directory `/Users/didi/opensource/orangeLab/vodka/clion/'
+ninja: no work to do.
+CMake Deprecation Warning at CMakeLists.ext:2 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (include)
+
+
+CMake Deprecation Warning at CMakeLists.ext:3 (cmake_policy):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (include)
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug

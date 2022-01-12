@@ -1,0 +1,34 @@
+depfile = "{{output}}.d"
+compiler_command = "{{cflags_cc}} {{defines}} {{include_dirs}} -MMD -MF $depfile -c {{source}} -o {{output}}"
+linker_command = ""
+
+toolchain("clang") {
+  if(build_ios) {
+     target_option = "-target $cross_compile_target-apple-ios9.0"
+     if(cross_compile_target == "i386" || cross_compile_target == "x86_64"){
+        target_option = string_join("-", [target_option, "simulator"])
+        compiler_command = string_join(" ", ["-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk", compiler_command])
+     }else{
+        compiler_command = string_join(" ", ["-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk", compiler_command])
+     }
+     compiler_command = string_join(" ", [target_option, compiler_command])
+  }else{
+
+  }
+  #C++ compiler
+  tool("cxx") {
+    command = string_join(" ", ["clang++", compiler_command])
+    outputs = ["{{source_out_dir}}/{{source_name_part}}.o"]
+  }
+
+  #Linker for executables
+  tool("link") {
+    command = string_join(" ", ["clang++", linker_command, "-o {{output}} {{inputs}}"])
+    default_output_dir = "{{root_out_dir}}"
+    outputs = ["{{output_dir}}/{{target_output_name}}{{output_extension}}"]
+  }
+ tool("stamp") {
+    command = "touch {{output}}"
+    description = "STAMP {{output}}"
+  }
+}

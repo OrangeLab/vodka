@@ -1,0 +1,115 @@
+{
+   "build_settings": {
+      "build_dir": "//clion/",
+      "default_toolchain": "//toolchain:clang",
+      "gen_input_files": [ "//.gn", "//BUILD.gn", "//BUILDCONFIG.gn", "//clion/args.gn", "//toolchain/BUILD.gn" ],
+      "root_path": "/Users/didi/opensource/orangeLab/vodka"
+   },
+   "targets": {
+      "//:test-main": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:cxx_standard_lib", "//:vodka_include" ],
+         "deps": [ "//:vodka_base", "//:vodka_runtime" ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//include/" ],
+         "metadata": {
+
+         },
+         "outputs": [ "//clion/test-main" ],
+         "public": "*",
+         "source_outputs": {
+            "//test/main.cpp": [ "obj/test/main.o" ]
+         },
+         "sources": [ "//test/main.cpp" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "executable",
+         "visibility": [ "*" ]
+      },
+      "//:vodka_base": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:cxx_standard_lib", "//:vodka_include" ],
+         "deps": [  ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//include/" ],
+         "metadata": {
+
+         },
+         "public": "*",
+         "source_outputs": {
+            "//src/base/js_task_runner.cpp": [ "obj/src/base/js_task_runner.o" ],
+            "//src/base/thread.cpp": [ "obj/src/base/thread.o" ]
+         },
+         "sources": [ "//src/base/js_task_runner.cpp", "//src/base/thread.cpp" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "source_set",
+         "visibility": [ "*" ]
+      },
+      "//:vodka_runtime": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:cxx_standard_lib", "//:vodka_include" ],
+         "deps": [  ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//include/" ],
+         "metadata": {
+
+         },
+         "public": "*",
+         "source_outputs": {
+            "//src/runtime/context.cpp": [ "obj/src/runtime/context.o" ],
+            "//src/runtime/dom_timer.cpp": [ "obj/src/runtime/dom_timer.o" ],
+            "//src/runtime/dom_timer_coordinator.cpp": [ "obj/src/runtime/dom_timer_coordinator.o" ],
+            "//src/runtime/runtime.cpp": [ "obj/src/runtime/runtime.o" ],
+            "//src/runtime/timer.cpp": [ "obj/src/runtime/timer.o" ]
+         },
+         "sources": [ "//src/runtime/context.cpp", "//src/runtime/timer.cpp", "//src/runtime/dom_timer.cpp", "//src/runtime/runtime.cpp", "//src/runtime/dom_timer_coordinator.cpp" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "source_set",
+         "visibility": [ "*" ]
+      }
+   },
+   "toolchains": {
+      "//toolchain:clang": {
+         "cxx": {
+            "command": "clang++ {{cflags_cc}} {{defines}} {{include_dirs}} -MMD -MF {{output}}.d -c {{source}} -o {{output}}",
+            "depfile": "{{output}}.d",
+            "framework_dir_switch": "-F",
+            "framework_switch": "-framework ",
+            "lib_dir_switch": "-L",
+            "lib_switch": "-l",
+            "outputs": [ "{{source_out_dir}}/{{source_name_part}}.o" ],
+            "weak_framework_switch": "-weak_framework "
+         },
+         "link": {
+            "command": "clang++  -o {{output}} {{inputs}}",
+            "default_output_dir": "{{root_out_dir}}",
+            "depfile": "{{output}}.d",
+            "framework_dir_switch": "-F",
+            "framework_switch": "-framework ",
+            "lib_dir_switch": "-L",
+            "lib_switch": "-l",
+            "outputs": [ "{{output_dir}}/{{target_output_name}}{{output_extension}}" ],
+            "weak_framework_switch": "-weak_framework "
+         },
+         "stamp": {
+            "command": "touch {{output}}",
+            "depfile": "{{output}}.d",
+            "description": "STAMP {{output}}"
+         }
+      }
+   }
+}

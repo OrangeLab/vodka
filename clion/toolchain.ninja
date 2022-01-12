@@ -1,0 +1,17 @@
+rule link
+  command = clang++  -o ${out} ${in}
+  depfile = ${out}.d
+  deps = gcc
+rule stamp
+  command = touch ${out}
+  description = STAMP ${out}
+  depfile = ${out}.d
+  deps = gcc
+rule cxx
+  command = clang++ ${cflags_cc} ${defines} ${include_dirs} -MMD -MF ${out}.d -c ${in} -o ${out}
+  depfile = ${out}.d
+  deps = gcc
+
+subninja obj/test-main.ninja
+subninja obj/vodka_base.ninja
+subninja obj/vodka_runtime.ninja

@@ -1,0 +1,14 @@
+defines =
+include_dirs = -I../include
+cflags_cc = -std=c++14
+target_output_name = test-main
+
+build obj/test/main.o: cxx ../test/main.cpp
+
+build ./test-main: link obj/test/main.o obj/src/base/js_task_runner.o obj/src/base/thread.o obj/src/runtime/context.o obj/src/runtime/timer.o obj/src/runtime/dom_timer.o obj/src/runtime/runtime.o obj/src/runtime/dom_timer_coordinator.o || obj/vodka_base.stamp obj/vodka_runtime.stamp
+  ldflags =
+  libs =
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = .

@@ -1,0 +1,10 @@
+defines =
+include_dirs = -I../include
+cflags_cc = -std=c++11
+target_output_name = vodka_task_base
+
+build obj/src/task/js_task_runner.o: cxx ../src/task/js_task_runner.cpp
+build obj/src/task/task.o: cxx ../src/task/task.cpp
+build obj/src/thread/thread.o: cxx ../src/thread/thread.cpp
+
+build obj/vodka_task_base.stamp: stamp obj/src/task/js_task_runner.o obj/src/task/task.o obj/src/thread/thread.o

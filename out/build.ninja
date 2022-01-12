@@ -1,0 +1,25 @@
+ninja_required_version = 1.7.2
+
+rule gn
+  command = ../../../google/gn/out/gn --root=./.. -q --regeneration gen .
+  pool = console
+  description = Regenerating ninja files
+
+build build.ninja: gn
+  generator = 1
+  depfile = build.ninja.d
+
+subninja toolchain.ninja
+
+build vodka_base: phony obj/vodka_base.stamp
+build vodka_runtime: phony obj/vodka_runtime.stamp
+build $:test-main: phony ./test-main
+build $:vodka_base: phony obj/vodka_base.stamp
+build $:vodka_runtime: phony obj/vodka_runtime.stamp
+
+build all: phony $
+    ./test-main $
+    obj/vodka_base.stamp $
+    obj/vodka_runtime.stamp
+
+default all

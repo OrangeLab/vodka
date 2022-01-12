@@ -1,0 +1,10 @@
+defines =
+include_dirs = -I../include
+cflags_cc = -std=c++11
+target_output_name = vodka_dom
+
+build obj/src/dom/timer.o: cxx ../src/dom/timer.cpp
+build obj/src/dom/dom_timer.o: cxx ../src/dom/dom_timer.cpp
+build obj/src/dom/dom_timer_coordinator.o: cxx ../src/dom/dom_timer_coordinator.cpp
+
+build obj/vodka_dom.stamp: stamp obj/src/dom/timer.o obj/src/dom/dom_timer.o obj/src/dom/dom_timer_coordinator.o

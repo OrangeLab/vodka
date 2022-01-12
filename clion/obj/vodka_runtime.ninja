@@ -1,0 +1,12 @@
+defines =
+include_dirs = -I../include
+cflags_cc = -std=c++14
+target_output_name = vodka_runtime
+
+build obj/src/runtime/context.o: cxx ../src/runtime/context.cpp
+build obj/src/runtime/timer.o: cxx ../src/runtime/timer.cpp
+build obj/src/runtime/dom_timer.o: cxx ../src/runtime/dom_timer.cpp
+build obj/src/runtime/runtime.o: cxx ../src/runtime/runtime.cpp
+build obj/src/runtime/dom_timer_coordinator.o: cxx ../src/runtime/dom_timer_coordinator.cpp
+
+build obj/vodka_runtime.stamp: stamp obj/src/runtime/context.o obj/src/runtime/timer.o obj/src/runtime/dom_timer.o obj/src/runtime/runtime.o obj/src/runtime/dom_timer_coordinator.o

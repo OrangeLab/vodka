@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/js_task_runner.h
+functional
+-
+mutex
+-
+queue
+-
+thread
+-
+task.h
+/Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
+task_runner.h
+/Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
+thread.h
+/Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
+memory
+-
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+pthread.h
+-
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
+chrono
+-
+
+/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp
+vodka/js_task_runner.h
+/Users/didi/opensource/orangeLab/vodka/src/base/vodka/js_task_runner.h
+vodka/time.h
+/Users/didi/opensource/orangeLab/vodka/src/base/vodka/time.h
+

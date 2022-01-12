@@ -1,0 +1,33 @@
+
+#make_unique is an upcoming C++14 feature and thus might not be available on your compiler, even if it is C++11 compliant.
+config("cxx_standard_lib") {
+  cflags_cc = ["-std=c++14"]
+}
+
+config("vodka_include") {
+    include_dirs = ["include"]
+}
+
+source_set("vodka_base") {
+  configs = [":cxx_standard_lib", ":vodka_include"]
+  sources = [
+    "src/base/js_task_runner.cpp",
+    "src/base/thread.cpp",
+  ]
+}
+source_set("vodka_runtime") {
+  configs = [":cxx_standard_lib", ":vodka_include"]
+  sources = [
+    "src/runtime/context.cpp",
+    "src/runtime/timer.cpp",
+    "src/runtime/dom_timer.cpp",
+    "src/runtime/runtime.cpp",
+    "src/runtime/dom_timer_coordinator.cpp"
+  ]
+}
+
+executable("test-main") {
+  sources = [ "test/main.cpp" ]
+  deps = [":vodka_base",":vodka_runtime"]
+  configs = [":cxx_standard_lib", ":vodka_include"]
+}
