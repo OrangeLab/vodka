@@ -1,5 +1,8 @@
-/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/test-main.dir
-/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir
 /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/test_vodka.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/semaphore.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/main_exe.dir

@@ -98,7 +98,8 @@ class Runtime {
   Runtime& operator=(const Runtime &) = delete;
 
   void RunOnJSThread(std::function<void()> &&callback);
- private:
+
+ protected:
   std::shared_ptr<JSContext> context_;
   std::shared_ptr<JSTaskRunner> task_runner_;
   RuntimeConfig config_;

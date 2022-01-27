@@ -1,0 +1,18 @@
+defines =
+include_dirs = -I../third_party/googletest/googletest/include -I../include
+cflags_cc = -std=c++14
+target_output_name = test_vodka
+
+build obj/test/test.o: cxx ../test/test.cpp
+build obj/test/test_timer.o: cxx ../test/test_timer.cpp
+build obj/test/test_context.o: cxx ../test/test_context.cpp
+build obj/test/test_runtime.o: cxx ../test/test_runtime.cpp
+build obj/test/test_task_runner.o: cxx ../test/test_task_runner.cpp
+
+build ./test_vodka: link obj/test/test.o obj/test/test_timer.o obj/test/test_context.o obj/test/test_runtime.o obj/test/test_task_runner.o obj/src/base/js_task_runner.o obj/src/base/thread.o obj/src/runtime/context.o obj/src/runtime/timer.o obj/src/runtime/dom_timer.o obj/src/runtime/runtime.o obj/src/runtime/dom_timer_coordinator.o obj/third_party/googletest/googletest/src/gtest-death-test.o obj/third_party/googletest/googletest/src/gtest-filepath.o obj/third_party/googletest/googletest/src/gtest-matchers.o obj/third_party/googletest/googletest/src/gtest-port.o obj/third_party/googletest/googletest/src/gtest-printers.o obj/third_party/googletest/googletest/src/gtest-test-part.o obj/third_party/googletest/googletest/src/gtest-typed-test.o obj/third_party/googletest/googletest/src/gtest.o obj/src/base/semaphore.o || obj/vodka_base.stamp obj/vodka_runtime.stamp obj/gtest.stamp obj/semaphore.stamp
+  ldflags =
+  libs =
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = .

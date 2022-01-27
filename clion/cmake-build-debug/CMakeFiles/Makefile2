@@ -72,9 +72,12 @@ CMAKE_BINARY_DIR = /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debu
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test-main.dir/all
-all: CMakeFiles/vodka_runtime.dir/all
 all: CMakeFiles/vodka_base.dir/all
+all: CMakeFiles/test_vodka.dir/all
+all: CMakeFiles/vodka_runtime.dir/all
+all: CMakeFiles/gtest.dir/all
+all: CMakeFiles/semaphore.dir/all
+all: CMakeFiles/main_exe.dir/all
 
 .PHONY : all
 
@@ -84,39 +87,71 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test-main.dir/clean
-clean: CMakeFiles/vodka_runtime.dir/clean
 clean: CMakeFiles/vodka_base.dir/clean
+clean: CMakeFiles/test_vodka.dir/clean
+clean: CMakeFiles/vodka_runtime.dir/clean
+clean: CMakeFiles/gtest.dir/clean
+clean: CMakeFiles/semaphore.dir/clean
+clean: CMakeFiles/main_exe.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test-main.dir
+# Target rules for target CMakeFiles/vodka_base.dir
 
 # All Build rule for target.
-CMakeFiles/test-main.dir/all: CMakeFiles/vodka_runtime.dir/all
-CMakeFiles/test-main.dir/all: CMakeFiles/vodka_base.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target test-main"
-.PHONY : CMakeFiles/test-main.dir/all
+CMakeFiles/vodka_base.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=18,19 "Built target vodka_base"
+.PHONY : CMakeFiles/vodka_base.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test-main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test-main.dir/all
+CMakeFiles/vodka_base.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vodka_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/test-main.dir/rule
+.PHONY : CMakeFiles/vodka_base.dir/rule
 
 # Convenience name for target.
-test-main: CMakeFiles/test-main.dir/rule
+vodka_base: CMakeFiles/vodka_base.dir/rule
 
-.PHONY : test-main
+.PHONY : vodka_base
 
 # clean rule for target.
-CMakeFiles/test-main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/clean
-.PHONY : CMakeFiles/test-main.dir/clean
+CMakeFiles/vodka_base.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/clean
+.PHONY : CMakeFiles/vodka_base.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_vodka.dir
+
+# All Build rule for target.
+CMakeFiles/test_vodka.dir/all: CMakeFiles/vodka_runtime.dir/all
+CMakeFiles/test_vodka.dir/all: CMakeFiles/gtest.dir/all
+CMakeFiles/test_vodka.dir/all: CMakeFiles/semaphore.dir/all
+CMakeFiles/test_vodka.dir/all: CMakeFiles/vodka_base.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16,17 "Built target test_vodka"
+.PHONY : CMakeFiles/test_vodka.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_vodka.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_vodka.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/test_vodka.dir/rule
+
+# Convenience name for target.
+test_vodka: CMakeFiles/test_vodka.dir/rule
+
+.PHONY : test_vodka
+
+# clean rule for target.
+CMakeFiles/test_vodka.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/clean
+.PHONY : CMakeFiles/test_vodka.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/vodka_runtime.dir
@@ -125,7 +160,7 @@ CMakeFiles/test-main.dir/clean:
 CMakeFiles/vodka_runtime.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_runtime.dir/build.make CMakeFiles/vodka_runtime.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_runtime.dir/build.make CMakeFiles/vodka_runtime.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9 "Built target vodka_runtime"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=20,21,22,23,24 "Built target vodka_runtime"
 .PHONY : CMakeFiles/vodka_runtime.dir/all
 
 # Build rule for subdir invocation for target.
@@ -146,31 +181,86 @@ CMakeFiles/vodka_runtime.dir/clean:
 .PHONY : CMakeFiles/vodka_runtime.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/vodka_base.dir
+# Target rules for target CMakeFiles/gtest.dir
 
 # All Build rule for target.
-CMakeFiles/vodka_base.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target vodka_base"
-.PHONY : CMakeFiles/vodka_base.dir/all
+CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target gtest"
+.PHONY : CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/vodka_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vodka_base.dir/all
+CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/vodka_base.dir/rule
+.PHONY : CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
-vodka_base: CMakeFiles/vodka_base.dir/rule
+gtest: CMakeFiles/gtest.dir/rule
 
-.PHONY : vodka_base
+.PHONY : gtest
 
 # clean rule for target.
-CMakeFiles/vodka_base.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/clean
-.PHONY : CMakeFiles/vodka_base.dir/clean
+CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/clean
+.PHONY : CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/semaphore.dir
+
+# All Build rule for target.
+CMakeFiles/semaphore.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=11 "Built target semaphore"
+.PHONY : CMakeFiles/semaphore.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/semaphore.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/semaphore.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/semaphore.dir/rule
+
+# Convenience name for target.
+semaphore: CMakeFiles/semaphore.dir/rule
+
+.PHONY : semaphore
+
+# clean rule for target.
+CMakeFiles/semaphore.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/clean
+.PHONY : CMakeFiles/semaphore.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main_exe.dir
+
+# All Build rule for target.
+CMakeFiles/main_exe.dir/all: CMakeFiles/vodka_runtime.dir/all
+CMakeFiles/main_exe.dir/all: CMakeFiles/vodka_base.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target main_exe"
+.PHONY : CMakeFiles/main_exe.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main_exe.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main_exe.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main_exe.dir/rule
+
+# Convenience name for target.
+main_exe: CMakeFiles/main_exe.dir/rule
+
+.PHONY : main_exe
+
+# clean rule for target.
+CMakeFiles/main_exe.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/clean
+.PHONY : CMakeFiles/main_exe.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

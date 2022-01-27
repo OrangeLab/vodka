@@ -1,0 +1,8 @@
+defines = -DVODKA_OS_MACOSX
+include_dirs = -I../include
+cflags_cc = -std=c++14
+target_output_name = semaphore
+
+build obj/src/base/semaphore.o: cxx ../src/base/semaphore.cpp
+
+build obj/semaphore.stamp: stamp obj/src/base/semaphore.o

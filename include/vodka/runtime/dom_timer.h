@@ -23,6 +23,7 @@ class DOMTimer : public TimerBase{
  private:
   int timeout_id_;
   std::function<void()> callback_;
+  JSContext *context_;
 };
 
 }

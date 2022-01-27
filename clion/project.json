@@ -6,7 +6,37 @@
       "root_path": "/Users/didi/opensource/orangeLab/vodka"
    },
    "targets": {
-      "//:test-main": {
+      "//:gtest": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:gtest_build", "//:cxx_standard_lib" ],
+         "deps": [  ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//third_party/googletest/googletest/", "//third_party/googletest/googletest/include/" ],
+         "metadata": {
+
+         },
+         "public": "*",
+         "source_outputs": {
+            "//third_party/googletest/googletest/src/gtest-death-test.cc": [ "obj/third_party/googletest/googletest/src/gtest-death-test.o" ],
+            "//third_party/googletest/googletest/src/gtest-filepath.cc": [ "obj/third_party/googletest/googletest/src/gtest-filepath.o" ],
+            "//third_party/googletest/googletest/src/gtest-matchers.cc": [ "obj/third_party/googletest/googletest/src/gtest-matchers.o" ],
+            "//third_party/googletest/googletest/src/gtest-port.cc": [ "obj/third_party/googletest/googletest/src/gtest-port.o" ],
+            "//third_party/googletest/googletest/src/gtest-printers.cc": [ "obj/third_party/googletest/googletest/src/gtest-printers.o" ],
+            "//third_party/googletest/googletest/src/gtest-test-part.cc": [ "obj/third_party/googletest/googletest/src/gtest-test-part.o" ],
+            "//third_party/googletest/googletest/src/gtest-typed-test.cc": [ "obj/third_party/googletest/googletest/src/gtest-typed-test.o" ],
+            "//third_party/googletest/googletest/src/gtest.cc": [ "obj/third_party/googletest/googletest/src/gtest.o" ]
+         },
+         "sources": [ "//third_party/googletest/googletest/src/gtest-death-test.cc", "//third_party/googletest/googletest/src/gtest-filepath.cc", "//third_party/googletest/googletest/src/gtest-matchers.cc", "//third_party/googletest/googletest/src/gtest-port.cc", "//third_party/googletest/googletest/src/gtest-printers.cc", "//third_party/googletest/googletest/src/gtest-test-part.cc", "//third_party/googletest/googletest/src/gtest-typed-test.cc", "//third_party/googletest/googletest/src/gtest.cc" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "source_set",
+         "visibility": [ "*" ]
+      },
+      "//:main_exe": {
          "allow_circular_includes_from": [  ],
          "cflags_cc": [ "-std=c++14" ],
          "check_includes": true,
@@ -19,12 +49,64 @@
          "metadata": {
 
          },
-         "outputs": [ "//clion/test-main" ],
+         "outputs": [ "//clion/main_exe" ],
          "public": "*",
          "source_outputs": {
             "//test/main.cpp": [ "obj/test/main.o" ]
          },
          "sources": [ "//test/main.cpp" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "executable",
+         "visibility": [ "*" ]
+      },
+      "//:semaphore": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:cxx_standard_lib", "//:vodka_include" ],
+         "defines": [ "VODKA_OS_MACOSX" ],
+         "deps": [  ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//include/" ],
+         "metadata": {
+
+         },
+         "public": "*",
+         "source_outputs": {
+            "//src/base/semaphore.cpp": [ "obj/src/base/semaphore.o" ]
+         },
+         "sources": [ "//src/base/semaphore.cpp" ],
+         "testonly": false,
+         "toolchain": "//toolchain:clang",
+         "type": "source_set",
+         "visibility": [ "*" ]
+      },
+      "//:test_vodka": {
+         "allow_circular_includes_from": [  ],
+         "cflags_cc": [ "-std=c++14" ],
+         "check_includes": true,
+         "configs": [ "//:gtest_build", "//:cxx_standard_lib", "//:vodka_include" ],
+         "deps": [ "//:gtest", "//:semaphore", "//:vodka_base", "//:vodka_runtime" ],
+         "externs": {
+
+         },
+         "include_dirs": [ "//third_party/googletest/googletest/include/", "//include/" ],
+         "metadata": {
+
+         },
+         "outputs": [ "//clion/test_vodka" ],
+         "public": "*",
+         "source_outputs": {
+            "//test/test.cpp": [ "obj/test/test.o" ],
+            "//test/test_context.cpp": [ "obj/test/test_context.o" ],
+            "//test/test_runtime.cpp": [ "obj/test/test_runtime.o" ],
+            "//test/test_task_runner.cpp": [ "obj/test/test_task_runner.o" ],
+            "//test/test_timer.cpp": [ "obj/test/test_timer.o" ]
+         },
+         "sources": [ "//test/test.cpp", "//test/test_timer.cpp", "//test/test_context.cpp", "//test/test_runtime.cpp", "//test/test_task_runner.cpp" ],
          "testonly": false,
          "toolchain": "//toolchain:clang",
          "type": "executable",

@@ -67,7 +67,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test-main.dir/DependInfo.cmake"
-  "CMakeFiles/vodka_runtime.dir/DependInfo.cmake"
   "CMakeFiles/vodka_base.dir/DependInfo.cmake"
+  "CMakeFiles/test_vodka.dir/DependInfo.cmake"
+  "CMakeFiles/vodka_runtime.dir/DependInfo.cmake"
+  "CMakeFiles/gtest.dir/DependInfo.cmake"
+  "CMakeFiles/semaphore.dir/DependInfo.cmake"
+  "CMakeFiles/main_exe.dir/DependInfo.cmake"
   )

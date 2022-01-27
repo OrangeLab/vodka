@@ -25,6 +25,8 @@ declare_args() {
     build_ios = false
     # 和 -apple-ios9.0 拼接，作为 -target 参数
 
+    # 默认编译 apple 版本
+    os_apple = true
 # OS_ANDROID
 }
 

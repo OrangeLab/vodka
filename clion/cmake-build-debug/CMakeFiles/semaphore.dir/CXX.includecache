@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/didi/opensource/orangeLab/vodka/include/vodka/semaphore.h
+dispatch/dispatch.h
+-
+semaphore.h
+-
+
+/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp
+vodka/semaphore.h
+/Users/didi/opensource/orangeLab/vodka/src/base/vodka/semaphore.h
+dispatch/dispatch.h
+-
+errno.h
+-
+

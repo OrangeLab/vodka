@@ -9,6 +9,7 @@ CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/c
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o: /Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp
 
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/js_task_runner.h
@@ -19,6 +20,7 @@ CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/d
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp
 
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/js_task_runner.h
@@ -29,6 +31,7 @@ CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/d
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o: /Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp
 
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/js_task_runner.h
@@ -40,6 +43,7 @@ CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/r
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o: /Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp
 
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/js_task_runner.h
@@ -50,5 +54,6 @@ CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/t
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o: /Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp
 

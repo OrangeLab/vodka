@@ -22,6 +22,11 @@ Thread::Thread(const Options &options){
   set_name(options.name());
 }
 
+void Thread::Join() {
+
+  pthread_join(thread_, nullptr);
+}
+
 void Thread::set_name(const char *name){
   strncpy(name_, name, sizeof(name_) - 1);
   name_[sizeof(name_) - 1] = '\0';

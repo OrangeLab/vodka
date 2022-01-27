@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = /Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -96,6 +85,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,17 +130,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test-main
+# Target rules for targets named vodka_base
 
 # Build rule for target.
-test-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-main
-.PHONY : test-main
+vodka_base: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vodka_base
+.PHONY : vodka_base
 
 # fast build rule for target.
-test-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/build
-.PHONY : test-main/fast
+vodka_base/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/build
+.PHONY : vodka_base/fast
+
+#=============================================================================
+# Target rules for targets named test_vodka
+
+# Build rule for target.
+test_vodka: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_vodka
+.PHONY : test_vodka
+
+# fast build rule for target.
+test_vodka/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/build
+.PHONY : test_vodka/fast
 
 #=============================================================================
 # Target rules for targets named vodka_runtime
@@ -156,17 +169,43 @@ vodka_runtime/fast:
 .PHONY : vodka_runtime/fast
 
 #=============================================================================
-# Target rules for targets named vodka_base
+# Target rules for targets named gtest
 
 # Build rule for target.
-vodka_base: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vodka_base
-.PHONY : vodka_base
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
 # fast build rule for target.
-vodka_base/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/build
-.PHONY : vodka_base/fast
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named semaphore
+
+# Build rule for target.
+semaphore: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 semaphore
+.PHONY : semaphore
+
+# fast build rule for target.
+semaphore/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/build
+.PHONY : semaphore/fast
+
+#=============================================================================
+# Target rules for targets named main_exe
+
+# Build rule for target.
+main_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_exe
+.PHONY : main_exe
+
+# fast build rule for target.
+main_exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/build
+.PHONY : main_exe/fast
 
 Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.o: Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp.o
 
@@ -194,6 +233,33 @@ Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.s: Users/didi/open
 Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vodka_base.dir/build.make CMakeFiles/vodka_base.dir/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp.s
 .PHONY : Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.o: Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.i: Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.s: Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/semaphore.dir/build.make CMakeFiles/semaphore.dir/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.s
 
 Users/didi/opensource/orangeLab/vodka/src/base/thread.o: Users/didi/opensource/orangeLab/vodka/src/base/thread.cpp.o
 
@@ -363,7 +429,7 @@ Users/didi/opensource/orangeLab/vodka/test/main.o: Users/didi/opensource/orangeL
 
 # target to build an object file
 Users/didi/opensource/orangeLab/vodka/test/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.o
 .PHONY : Users/didi/opensource/orangeLab/vodka/test/main.cpp.o
 
 Users/didi/opensource/orangeLab/vodka/test/main.i: Users/didi/opensource/orangeLab/vodka/test/main.cpp.i
@@ -372,7 +438,7 @@ Users/didi/opensource/orangeLab/vodka/test/main.i: Users/didi/opensource/orangeL
 
 # target to preprocess a source file
 Users/didi/opensource/orangeLab/vodka/test/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.i
 .PHONY : Users/didi/opensource/orangeLab/vodka/test/main.cpp.i
 
 Users/didi/opensource/orangeLab/vodka/test/main.s: Users/didi/opensource/orangeLab/vodka/test/main.cpp.s
@@ -381,8 +447,359 @@ Users/didi/opensource/orangeLab/vodka/test/main.s: Users/didi/opensource/orangeL
 
 # target to generate assembly for a file
 Users/didi/opensource/orangeLab/vodka/test/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test-main.dir/build.make CMakeFiles/test-main.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_exe.dir/build.make CMakeFiles/main_exe.dir/Users/didi/opensource/orangeLab/vodka/test/main.cpp.s
 .PHONY : Users/didi/opensource/orangeLab/vodka/test/main.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/test/test.o: Users/didi/opensource/orangeLab/vodka/test/test.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/test/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/test/test.i: Users/didi/opensource/orangeLab/vodka/test/test.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/test/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/test/test.s: Users/didi/opensource/orangeLab/vodka/test/test.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/test/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/test/test_context.o: Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/test/test_context.i: Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/test/test_context.s: Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_context.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.o: Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.i: Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.s: Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.o: Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.i: Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.s: Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/test/test_timer.o: Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.o
+
+Users/didi/opensource/orangeLab/vodka/test/test_timer.i: Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.i
+
+Users/didi/opensource/orangeLab/vodka/test/test_timer.s: Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_vodka.dir/build.make CMakeFiles/test_vodka.dir/Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.s
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.o: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.o
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.o
+
+# target to build an object file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.o
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.o
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.i: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.i
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.i
+
+# target to preprocess a source file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.i
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.i
+
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.s: Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.s
+
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.s
+
+# target to generate assembly for a file
+Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gtest.dir/build.make CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.s
+.PHONY : Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.s
 
 # Help Target
 help:
@@ -392,12 +809,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test-main"
+	@echo "... gtest"
+	@echo "... main_exe"
+	@echo "... semaphore"
+	@echo "... test_vodka"
 	@echo "... vodka_base"
 	@echo "... vodka_runtime"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.o"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.i"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/semaphore.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/semaphore.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/semaphore.s"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/thread.o"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/thread.i"
 	@echo "... Users/didi/opensource/orangeLab/vodka/src/base/thread.s"
@@ -419,6 +842,45 @@ help:
 	@echo "... Users/didi/opensource/orangeLab/vodka/test/main.o"
 	@echo "... Users/didi/opensource/orangeLab/vodka/test/main.i"
 	@echo "... Users/didi/opensource/orangeLab/vodka/test/main.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_context.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_context.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_context.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_runtime.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_runtime.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_runtime.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_task_runner.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_task_runner.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_task_runner.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_timer.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_timer.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/test/test_timer.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.s"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.o"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.i"
+	@echo "... Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.s"
 .PHONY : help
 
 

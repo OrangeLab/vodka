@@ -26,7 +26,61 @@ source_set("vodka_runtime") {
   ]
 }
 
-executable("test-main") {
+#----------------------------- gtest
+config("gtest_build") {
+  include_dirs = [
+      "third_party/googletest/googletest/include"
+  ]
+}
+
+source_set("semaphore"){
+  sources = [
+     "src/base/semaphore.cpp",
+  ]
+  configs = [
+     ":cxx_standard_lib",
+     ":vodka_include"
+  ]
+  if (os_apple){
+     defines = [ "VODKA_OS_MACOSX" ]
+  }
+}
+
+source_set("gtest"){
+  sources = [
+     "third_party/googletest/googletest/src/gtest-death-test.cc",
+     "third_party/googletest/googletest/src/gtest-filepath.cc",
+     "third_party/googletest/googletest/src/gtest-matchers.cc",
+     "third_party/googletest/googletest/src/gtest-port.cc",
+     "third_party/googletest/googletest/src/gtest-printers.cc",
+     "third_party/googletest/googletest/src/gtest-test-part.cc",
+     "third_party/googletest/googletest/src/gtest-typed-test.cc",
+     "third_party/googletest/googletest/src/gtest.cc",
+  ]
+  configs = [":gtest_build", ":cxx_standard_lib"]
+  # Some files include "src/gtest-internal-inl.h".
+  include_dirs = [ "third_party/googletest/googletest" ]
+}
+
+executable("test_vodka") {
+
+  sources = [
+     "test/test.cpp",
+     "test/test_timer.cpp",
+     "test/test_context.cpp",
+     "test/test_runtime.cpp",
+     "test/test_task_runner.cpp",
+  ]
+  deps = [
+     ":vodka_base",
+     ":vodka_runtime",
+     ":gtest",
+     ":semaphore"
+  ]
+  configs = [":gtest_build", ":cxx_standard_lib", ":vodka_include"]
+}
+
+executable("main_exe") {
   sources = [ "test/main.cpp" ]
   deps = [":vodka_base",":vodka_runtime"]
   configs = [":cxx_standard_lib", ":vodka_include"]

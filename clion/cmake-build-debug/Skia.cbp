@@ -17,11 +17,11 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="test-main">
-				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/test-main" prefix_auto="0" extension_auto="0"/>
+			<Target title="vodka_base">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/vodka_base.objlib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
@@ -33,17 +33,17 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-main"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 vodka_base"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="test-main/fast">
-				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/test-main" prefix_auto="0" extension_auto="0"/>
+			<Target title="vodka_base/fast">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/vodka_base.objlib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
@@ -55,17 +55,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 test-main/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 vodka_base/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -76,6 +66,52 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vodka">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/test_vodka" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_vodka"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vodka/fast">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/test_vodka" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_vodka/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -125,14 +161,15 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="vodka_base">
-				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/vodka_base.objlib" prefix_auto="0" extension_auto="0"/>
+			<Target title="gtest">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/gtest.objlib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="clang"/>
 				<Compiler>
-					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
@@ -141,17 +178,96 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 vodka_base"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="vodka_base/fast">
-				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/vodka_base.objlib" prefix_auto="0" extension_auto="0"/>
+			<Target title="gtest/fast">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/gtest.objlib" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semaphore">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/semaphore.dir/semaphore.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DVODKA_OS_MACOSX"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 semaphore"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="semaphore/fast">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/semaphore.dir/semaphore.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DVODKA_OS_MACOSX"/>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 semaphore/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main_exe">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/main_exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
@@ -163,36 +279,95 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 vodka_base/fast"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 main_exe"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main_exe/fast">
+				<Option output="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/main_exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/didi/opensource/orangeLab/vodka/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 main_exe/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/gtest.dir/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc.o">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/semaphore.dir/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp.o">
+			<Option target="test_vodka"/>
+		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_base.dir/Users/didi/opensource/orangeLab/vodka/src/base/thread.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/context.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/dom_timer_coordinator.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/runtime.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/cmake-build-debug/CMakeFiles/vodka_runtime.dir/Users/didi/opensource/orangeLab/vodka/src/runtime/timer.cpp.o">
-			<Option target="test-main"/>
+			<Option target="test_vodka"/>
+			<Option target="main_exe"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp">
 			<Option target="vodka_base"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp">
+			<Option target="semaphore"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/src/base/thread.cpp">
 			<Option target="vodka_base"/>
@@ -213,7 +388,46 @@
 			<Option target="vodka_runtime"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/main.cpp">
-			<Option target="test-main"/>
+			<Option target="main_exe"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/test.cpp">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/test_context.cpp">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp">
+			<Option target="test_vodka"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc">
+			<Option target="gtest"/>
 		</Unit>
 		<Unit filename="/Users/didi/opensource/orangeLab/vodka/clion/CMakeLists.ext">
 			<Option virtualFolder="CMake Files\"/>

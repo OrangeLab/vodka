@@ -29,20 +29,21 @@ class TimerBase {
  public:
   virtual ~TimerBase();
 
-  explicit TimerBase(JSContext *context, bool single_shot);
+  explicit TimerBase(JSTaskRunner *runner);
   TimerBase(const TimerBase&) = delete;
   TimerBase& operator=(const TimerBase&) = delete;
 
-  void Start(uint64_t delay_in_millisecond);
+  void StartRepeating(uint64_t delay_in_millisecond);
+  void StartOneShot(uint64_t delay_in_millisecond);
   virtual void Stop();
   virtual void Fired() {};
 
-  inline JSContext *context(){
-      return context_;
+  inline bool single_shot() const{
+    return single_shot_;
   };
 
-  inline bool single_shot(){
-    return single_shot_;
+  inline uint64_t delay_in_millisecond() const{
+    return delay_in_millisecond_;
   };
 
  private:
@@ -50,8 +51,8 @@ class TimerBase {
   void SetNextFireTime();
 
   std::shared_ptr<JSTask> timeout_task_;
-  JSContext *context_;
-  bool single_shot_;
+  JSTaskRunner* runner_;
+  bool single_shot_{true};
   uint64_t delay_in_millisecond_;
 };
 

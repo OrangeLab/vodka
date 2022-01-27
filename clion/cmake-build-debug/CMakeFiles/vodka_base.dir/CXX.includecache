@@ -21,6 +21,8 @@ task_runner.h
 /Users/didi/opensource/orangeLab/vodka/include/vodka/task_runner.h
 thread.h
 /Users/didi/opensource/orangeLab/vodka/include/vodka/thread.h
+time.h
+/Users/didi/opensource/orangeLab/vodka/include/vodka/time.h
 
 /Users/didi/opensource/orangeLab/vodka/include/vodka/task.h
 

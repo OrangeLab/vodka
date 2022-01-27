@@ -23,6 +23,7 @@ class Thread {
   };
 
   explicit Thread(const Options &options);
+  // https://en.cppreference.com/w/cpp/thread/thread/~thread
   virtual ~Thread() {};
 
   Thread(const Thread &) = delete;
@@ -32,8 +33,9 @@ class Thread {
   // On success, pthread_create() returns 0; on error, it returns an error number
   int Start();
   virtual void Run() = 0;
-
+  void Join();
   inline const char* name() const { return name_; }
+  inline const pthread_t& thread()  { return thread_; }
 
   // The thread name length is limited to 16 based on Linux's implementation of
   // https://man7.org/linux/man-pages/man3/pthread_setname_np.3.html

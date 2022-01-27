@@ -12,6 +12,9 @@ rule cxx
   depfile = ${out}.d
   deps = gcc
 
-subninja obj/test-main.ninja
+subninja obj/gtest.ninja
+subninja obj/main_exe.ninja
+subninja obj/semaphore.ninja
+subninja obj/test_vodka.ninja
 subninja obj/vodka_base.ninja
 subninja obj/vodka_runtime.ninja

@@ -14,6 +14,7 @@
 #include "task.h"
 #include "task_runner.h"
 #include "thread.h"
+#include "time.h"
 
 namespace vodka {
 class JSContext;
@@ -31,6 +32,11 @@ class JSTask : public Task {
   Function callback_ = nullptr;
 };
 
+/**
+ * 实现标准：
+ * 1. 当 TaskRunner 自身被释放后，内部任务不在被执行。
+ *
+ * */
 class JSTaskRunner : public TaskRunner {
  public:
   JSTaskRunner();
@@ -43,9 +49,12 @@ class JSTaskRunner : public TaskRunner {
   // 只能在 JS 线程访问
   void PostDelayedTask(std::shared_ptr<Task> task,
                        int64_t delay_in_milliseconds) override;
-  void Run() override;
   void Quit() override;
 
+  // test only
+  inline TimeDelta GetNextWakeUp() const {
+      return next_wake_up_time_;
+  };
  private:
   class JSThread : public Thread {
    public:
@@ -55,25 +64,28 @@ class JSTaskRunner : public TaskRunner {
     JSThread(const JSThread&) = delete;
     JSThread& operator=(const JSThread&) = delete;
 
-   private:
+    std::atomic<bool> no_runner{false};
+  private:
     JSTaskRunner* taskRunner_;
   };
 
-  using DelayedPair = std::pair<uint64_t, std::shared_ptr<Task>>;
+  using DelayedPair = std::pair<TimeDelta, std::shared_ptr<Task>>;
   struct CompareEntry {
     bool operator()(const DelayedPair& __x, const DelayedPair& __y) const {
-      return __x.first > __y.first;
+      return __x.first.stamp() > __y.first.stamp();
     }
   };
   std::shared_ptr<Task> GetNext();
 
-  bool is_quit_;
+  std::atomic<bool> is_quit_{false};
   std::mutex mutex_;
   std::condition_variable cv_;
   std::queue<std::shared_ptr<Task>> task_queue_;
   std::unique_ptr<JSThread> thread_;
   std::priority_queue<DelayedPair, std::vector<DelayedPair>, CompareEntry>
       delayed_task_queue_;
+
+  TimeDelta next_wake_up_time_{0};
 };
 
 class GlobalJSTaskRunner {

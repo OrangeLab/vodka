@@ -1,0 +1,15 @@
+defines =
+include_dirs = -I../third_party/googletest/googletest -I../third_party/googletest/googletest/include
+cflags_cc = -std=c++14
+target_output_name = gtest
+
+build obj/third_party/googletest/googletest/src/gtest-death-test.o: cxx ../third_party/googletest/googletest/src/gtest-death-test.cc
+build obj/third_party/googletest/googletest/src/gtest-filepath.o: cxx ../third_party/googletest/googletest/src/gtest-filepath.cc
+build obj/third_party/googletest/googletest/src/gtest-matchers.o: cxx ../third_party/googletest/googletest/src/gtest-matchers.cc
+build obj/third_party/googletest/googletest/src/gtest-port.o: cxx ../third_party/googletest/googletest/src/gtest-port.cc
+build obj/third_party/googletest/googletest/src/gtest-printers.o: cxx ../third_party/googletest/googletest/src/gtest-printers.cc
+build obj/third_party/googletest/googletest/src/gtest-test-part.o: cxx ../third_party/googletest/googletest/src/gtest-test-part.cc
+build obj/third_party/googletest/googletest/src/gtest-typed-test.o: cxx ../third_party/googletest/googletest/src/gtest-typed-test.cc
+build obj/third_party/googletest/googletest/src/gtest.o: cxx ../third_party/googletest/googletest/src/gtest.cc
+
+build obj/gtest.stamp: stamp obj/third_party/googletest/googletest/src/gtest-death-test.o obj/third_party/googletest/googletest/src/gtest-filepath.o obj/third_party/googletest/googletest/src/gtest-matchers.o obj/third_party/googletest/googletest/src/gtest-port.o obj/third_party/googletest/googletest/src/gtest-printers.o obj/third_party/googletest/googletest/src/gtest-test-part.o obj/third_party/googletest/googletest/src/gtest-typed-test.o obj/third_party/googletest/googletest/src/gtest.o

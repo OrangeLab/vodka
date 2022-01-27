@@ -3,20 +3,29 @@
 //
 
 #include "vodka/runtime/dom_timer.h"
+
 #include "vodka/runtime/context.h"
 
 namespace vodka {
 
-DOMTimer::DOMTimer(JSContext *context, std::function<void()> &&func, uint64_t delay_in_millisecond, bool single_shot) : TimerBase(context ,single_shot), callback_(std::move(func)) {
-  Start(delay_in_millisecond);
+DOMTimer::DOMTimer(JSContext *context, std::function<void()> &&func,
+                   uint64_t delay_in_millisecond, bool single_shot)
+    : TimerBase(context->taskRunner()),
+      callback_(std::move(func)),
+      context_(context) {
+  if (single_shot){
+    StartOneShot(delay_in_millisecond);
+  }else{
+    StartRepeating(delay_in_millisecond);
+  }
 }
 
 void DOMTimer::Fired() {
-  if (callback_){
+  if (callback_) {
     callback_();
   }
-  if (single_shot()){
-    context()->timers()->RemoveTimeoutByID(timeout_id_);
+  if (single_shot()) {
+    context_->timers()->RemoveTimeoutByID(timeout_id_);
   }
 }
-}
+}  // namespace vodka

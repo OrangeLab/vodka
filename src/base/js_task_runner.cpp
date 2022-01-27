@@ -26,22 +26,36 @@ std::shared_ptr<JSTaskRunner> GlobalJSTaskRunner::GetInstance(){
   return runner;
 }
 
-JSTaskRunner::JSThread::JSThread(JSTaskRunner *task_runner) : Thread(Thread::Options("hummer.vodka.js.taskRunner")), taskRunner_(task_runner) {
+JSTaskRunner::JSThread::JSThread(JSTaskRunner *task_runner) : Thread(Thread::Options("hummer.vodka.js.taskRunner")),
+                                                              taskRunner_(task_runner),
+                                                              no_runner(task_runner == nullptr){
   Start();
 }
 
 void JSTaskRunner::JSThread::Run(){
 
-  taskRunner_->Run();
+  while (no_runner == false) {
+    std::shared_ptr<Task> task = taskRunner_->GetNext();
+    if (task == nullptr){
+      return;
+    }
+    task->Run();
+  }
 }
 
-JSTaskRunner::JSTaskRunner() {
+JSTaskRunner::JSTaskRunner():thread_(std::make_unique<JSThread>(this)) { }
 
-  thread_ = std::make_unique<JSThread>(this);
-}
-
+// 如果 JSTaskRunner 在非 JSThread 析构，则无法保证 task runner 的线程安全：函数执行过程中被析构。
+// 因此 通过 Jion 阻止析构过程，直到退出事件循环
 JSTaskRunner::~JSTaskRunner() {
-  Quit();
+  is_quit_ = true;
+  pthread_t js_thread = thread_->thread();
+  if (pthread_equal(pthread_self(), js_thread) == 0){
+    //不在 js 线程。
+    cv_.notify_one();
+    thread_->Join();
+  }
+  thread_->no_runner = true;
 }
 
 void JSTaskRunner::PostTask(std::shared_ptr<Task> task) {
@@ -49,18 +63,19 @@ void JSTaskRunner::PostTask(std::shared_ptr<Task> task) {
   if (is_quit_){ return; }
   std::lock_guard<std::mutex> lock(mutex_);
   task_queue_.push(std::move(task));
+  cv_.notify_one();
 }
 
 void JSTaskRunner::PostDelayedTask(std::shared_ptr<Task> task, int64_t delay_in_milliseconds) {
 
   if (is_quit_){ return; }
+  std::lock_guard<std::mutex> lock(mutex_);
   if (delay_in_milliseconds <= 0){
-    std::lock_guard<std::mutex> lock(mutex_);
     task_queue_.push(std::move(task));
   }else{
-    auto fireTime = SteadyClockNow() + delay_in_milliseconds;
-    delayed_task_queue_.push(DelayedPair(fireTime, std::move(task)));
+    delayed_task_queue_.push(DelayedPair(TimeDelta::FromMilliseconds(delay_in_milliseconds), std::move(task)));
   }
+  cv_.notify_one();
 }
 
 std::shared_ptr<Task> JSTaskRunner::GetNext() {
@@ -71,7 +86,7 @@ std::shared_ptr<Task> JSTaskRunner::GetNext() {
     while (true) {
       if (delayed_task_queue_.empty()) {break;}
       const DelayedPair &delayedTask = delayed_task_queue_.top();
-      if (delayedTask.first > now) {break;}
+      if (delayedTask.first.stamp() > now) {break;}
       if (!delayedTask.second->canceled_) {
         // remove cv
         DelayedPair &no_const_delayedTask = const_cast<DelayedPair &>(delayedTask);
@@ -95,34 +110,31 @@ std::shared_ptr<Task> JSTaskRunner::GetNext() {
         task_queue_.pop();
       }
     }
-
+    if (is_quit_){
+      return nullptr;
+    }
     {
       // wait signal
       if (task_queue_.empty() && !delayed_task_queue_.empty()) {
         // wakeup for timeout
         const DelayedPair &delayed_task = delayed_task_queue_.top();
-        uint64_t wakeTime = delayed_task.first - now;
+        uint64_t wakeTime = delayed_task.first.stamp() - now;
+        next_wake_up_time_ = delayed_task.first;
         cv_.wait_for(lock, std::chrono::milliseconds(wakeTime));
-
       }else{
+        next_wake_up_time_ = TimeDelta{0};
         cv_.wait(lock);
       }
     }
   }
 }
 
-void JSTaskRunner::Run() {
-  while (true){
-    if (is_quit_){return;}
-    auto task = GetNext();
-    task->Run();
-  }
-}
 void JSTaskRunner::Quit() {
   std::lock_guard<std::mutex> lock(mutex_);
   if (is_quit_){ return; }
   is_quit_ = true;
-
+  cv_.notify_one();
 }
+
 
 }

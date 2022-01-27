@@ -14,14 +14,33 @@ foreach("other_dep" ${other_deps})
 endforeach("other_dep")
 
 
-#//:vodka_base
-set("target" "vodka_base")
-list(APPEND "${target}__cxx_srcs"
-  "/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp"
-  "/Users/didi/opensource/orangeLab/vodka/src/base/thread.cpp")
-add_library("${target}" OBJECT ${${target}__cxx_srcs})
+#//:main_exe
+set("target" "main_exe")
+set("${target}__cxx_srcs" "/Users/didi/opensource/orangeLab/vodka/test/main.cpp")
+list(APPEND "${target}__obj_target_srcs"
+  "$<TARGET_OBJECTS:vodka_base>"
+  "$<TARGET_OBJECTS:vodka_runtime>")
+add_executable("${target}" ${${target}__cxx_srcs} ${${target}__obj_target_srcs})
 set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
   "/Users/didi/opensource/orangeLab/vodka/include/")
+set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
+
+
+#//:gtest
+set("target" "gtest")
+list(APPEND "${target}__cxx_srcs"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-death-test.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-filepath.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-matchers.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-port.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-printers.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-test-part.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest-typed-test.cc"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/src/gtest.cc")
+add_library("${target}" OBJECT ${${target}__cxx_srcs})
+set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/"
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include/")
 set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
 
 
@@ -39,13 +58,42 @@ set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
 set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
 
 
-#//:test-main
-set("target" "test-main")
-set("${target}__cxx_srcs" "/Users/didi/opensource/orangeLab/vodka/test/main.cpp")
+#//:test_vodka
+set("target" "test_vodka")
+list(APPEND "${target}__cxx_srcs"
+  "/Users/didi/opensource/orangeLab/vodka/test/test.cpp"
+  "/Users/didi/opensource/orangeLab/vodka/test/test_timer.cpp"
+  "/Users/didi/opensource/orangeLab/vodka/test/test_context.cpp"
+  "/Users/didi/opensource/orangeLab/vodka/test/test_runtime.cpp"
+  "/Users/didi/opensource/orangeLab/vodka/test/test_task_runner.cpp")
 list(APPEND "${target}__obj_target_srcs"
   "$<TARGET_OBJECTS:vodka_base>"
-  "$<TARGET_OBJECTS:vodka_runtime>")
+  "$<TARGET_OBJECTS:gtest>"
+  "$<TARGET_OBJECTS:vodka_runtime>"
+  "$<TARGET_OBJECTS:semaphore>")
 add_executable("${target}" ${${target}__cxx_srcs} ${${target}__obj_target_srcs})
+set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
+  "/Users/didi/opensource/orangeLab/vodka/third_party/googletest/googletest/include/"
+  "/Users/didi/opensource/orangeLab/vodka/include/")
+set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
+
+
+#//:semaphore
+set("target" "semaphore")
+set("${target}__cxx_srcs" "/Users/didi/opensource/orangeLab/vodka/src/base/semaphore.cpp")
+add_library("${target}" OBJECT ${${target}__cxx_srcs})
+set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
+  "/Users/didi/opensource/orangeLab/vodka/include/")
+set_target_properties("${target}" PROPERTIES COMPILE_DEFINITIONS "VODKA_OS_MACOSX;")
+set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
+
+
+#//:vodka_base
+set("target" "vodka_base")
+list(APPEND "${target}__cxx_srcs"
+  "/Users/didi/opensource/orangeLab/vodka/src/base/js_task_runner.cpp"
+  "/Users/didi/opensource/orangeLab/vodka/src/base/thread.cpp")
+add_library("${target}" OBJECT ${${target}__cxx_srcs})
 set_property(TARGET "${target}" APPEND PROPERTY INCLUDE_DIRECTORIES
   "/Users/didi/opensource/orangeLab/vodka/include/")
 set_target_properties("${target}" PROPERTIES COMPILE_FLAGS "-std=c++14 ")
